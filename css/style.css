@@ -1,0 +1,299 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secuendario: #0097a7;
+    --gris: #757575;
+    --terciario: #ff0707;
+    --fuente_principal: 3.8rem;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;/*aqui le estoy agregando la funcion de scroll en Y*/
+    
+}
+.servicios, .nav-principal, .formulario {/*scroll para nav*/
+    scroll-snap-align: center;
+    scroll-padding-top: always;/*se detiene en cada seccion*/
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  h1{
+    font-size: 2.5rem;
+  }
+  @media (min-width:375px){
+    h1{
+        font-size: 6rem;
+    }
+}
+  h2{
+    font-size:2.8rem;
+  }
+  h3{
+    font-size: 1.8rem;
+  }
+  h1,h2,h3{
+    text-align: center;
+  }
+  .sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;/*un poquito de borde al background*/
+  }
+   
+
+        body{
+            font-size: 16px;/*1rem = 10px*/
+            font-family: 'Krub', sans-serif;
+            background-image: linear-gradient(to top, #FFFAD7  0%,var(--blanco)50%);/*en esta linea de codigo hago un background color gradiente de abajo hacia arriba, vemos que va de amarillo a blanco como se indica*/
+        }
+        
+        .titulo span {
+            font-size: 2rem;
+            
+        }
+        @media (min-width:375px){
+            .titulo span{
+                align-items: flex-end;
+
+            }
+        }
+        
+        
+        .nav-principal{
+            
+            display: flex;/*habilita flexbox para mejorar la barra de navegacion 
+            en sus propiedades*/
+            flex-direction: column;
+            /*flex-direction: column;* aqui esta ordenando la barra de navegacion de manera vertical o en columna/
+            /*align-items: center;* aqui lo esta alineando al centro/
+            /*
+            justify-content: space-between;
+            justify-content: space-around;
+            justify-content: space-evenly;
+            juistifica o mas bien reacomoda la
+            barra de navegacion mas centrada y ordenada*/
+
+
+        }
+        .contenedor{
+            max-width: 120rem;
+            /*margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;*/
+            margin: 0 auto 0 auto;
+        }
+        .boton{
+            background-color: #4E6E81;
+            color:var(--blanco);
+            padding: 1rem 3rem;
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-decoration: none;/*quitra la linea de abajo del texto*/
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 90%;/*esrtablesco el tam del boton para disp moviles*/
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        @media (min-width:768px){
+            .boton{
+                width:auto;
+            }
+        }
+        .nav-backgroud{
+            background-color: #4E6E81;
+        }
+        .nav-principal a{
+            padding: 2rem;/*con este padding mi background se rellenara en toda la barra*/
+            color: var(--blanco);
+            text-decoration: none;/*elimina la linea abajo del la barra de navegacion*/
+            font-size: 1rem;
+            font-weight: 700;
+            display: block;/*{Estos dos comandos se usan para*/
+            text-align: center;/*alinear los botnes de navegacion en el centro}*/
+
+        }
+        .nav-principal a:hover{/*con esta etiqueta aplicando el :hover, ya puedo colocarle el amarillo de b
+            ackground cuando el cursor pase por ecime de el*/
+            background-color: var(--primario);
+            color: var(--oscuro);
+        }
+        
+@media (min-width:480px){
+    .nav-principal{
+        flex-direction: row;
+        
+    }
+    
+
+}
+@media (min-width:768px){
+    .nav-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-principal a{
+        font-size: 2rem;
+    }
+    .hero{
+        background-image: url(../image/UX.jpg);
+    background-repeat: no-repeat;/*con este comando no repito la imagen a lo largo del la pag web*/
+    background-size: cover;
+    height: 600px;
+    max-width: 100%;
+    margin-bottom: 2rem;/*aqui estoy separando la clase .hero de la main para que se vea mejor*/
+    
+    
+    position: relative;
+    }
+    
+}
+@media (min-width:1140px){
+    
+}
+
+
+.hero{
+    background-image: url(../image/UX.jpg);
+    background-repeat: no-repeat;/*con este comando no repito la imagen a lo largo del la pag web*/
+    background-size: cover;
+    height: 650px;
+    max-width: 100%;
+    margin-bottom: 2rem;/*aqui estoy separando la clase .hero de la main para que se vea mejor*/
+    
+    
+    position: relative;
+}
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,.7);
+    width: 100%;
+    height: 100%;
+    /*-----------------------------------*/
+    display: flex;/*en estos dos comandaos le digo a la clase hero que todos sus hijos*/
+    flex-direction: column;/*se alinien con el titulo y ademas que se coloquen en columna*/
+    align-items: center;/*centreando horizontalmente*/
+    justify-content: center;/*centreando verticalmente (todo esto para que el titulo quede en el mismo centro de la)*/
+}
+ .contenido-hero h2, .contenido-hero p{
+    color: var(--blanco);
+ }
+ .ubicacion{
+    display: flex;
+    /*justify-content: center;*/
+    align-items:flex-end;/*alinea verticalmente hacia abajo*/
+ }
+ .ubicacion p{
+    display: flex;
+    align-items: flex-end;
+ }
+
+@media (min-width:768px){
+   .servicios{
+        display: grid;/*con display grid trabajo la pag web en 2 dimensiones, arriba y abajo, izq y derecha*/
+        grid-template-columns: 1fr 1fr 1fr;/*1fr significa que esta tomando 1 fraccion 
+        del espacio disponible, en este caso seria 100%/3*/
+        column-gap: 1rem;/*aqui le estoy colocando 10px de separacion entre cada columna*/
+        padding: 2rem;
+     } 
+}
+
+
+    .servicio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    } 
+
+    .servicio h3{
+        color: #0097a7;
+        font-weight: normal;
+    }
+    .servicio .iconos{
+        height: 15rem;
+        width: 15rem;
+        background-color: var(--primario);
+        border-radius: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .servicio p{
+        line-height: 2;/*con esta propiedad le aplica un poco de interlineado para que se vea mekjor el parrafo*/
+    }
+    /*aqui modifico el formulario*/
+    .formulario{ 
+        
+        background-color: #2E3840;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        width: min(60rem, 100%);/*utiliza el valor mas chico, para ajustarse al dispositivo 
+        utilizado,par que se vea responsive*/
+        margin: 0 auto;/*utilizo margin:0 auto para centrar ya que es un form*/
+    }
+    .formulario fieldset{
+        border: none;
+        
+    }
+
+    .formulario legend{
+        color: #ffc107;
+        text-align: center;
+        font-size: 1.8rem;
+        text-transform: uppercase;/*aqui lo pongo en mayuscula cerrada*/
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    .campos input{
+        width: 100%;
+        background-color: #2E3840;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        border: 1px solid #4E6E81;
+        font-family: 'calibri';
+        font-size: 18px;
+    }
+    .campos textarea{
+        width: 100%;
+        background-color: #2E3840;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        border: 1px solid #4E6E81;
+        font-family: 'calibri';
+        font-size: 18px; 
+    }
+    .campos label{
+        color: #ffc107;
+        font-size: 1.5rem;
+        font-weight: 600;
+        
+    }
+ 
+    .enviar input{
+        width: 100%;
+        background-color: #4E6E81;
+        border: none;
+        padding:12px;
+        color: #ffc107;
+    }
+ 
